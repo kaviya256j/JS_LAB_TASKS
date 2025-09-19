@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Validate Name Field</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      display: flex;
+      min-height: 100vh;
+      align-items: center;
+      justify-content: center;
+      background: #f7fbff;
+      margin: 0;
+    }
+    .card {
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+      text-align: center;
+      width: 380px;
+    }
+    h1 { margin-bottom: 15px; font-size: 22px; }
+    input {
+      padding: 8px;
+      font-size: 16px;
+      width: 90%;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 8px 16px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      background: #0077ff;
+      color: white;
+    }
+    button:active { transform: translateY(1px); }
+    #result {
+      margin-top: 15px;
+      font-weight: bold;
+      font-size: 18px;
+      color: #0b5ed7;
+      word-wrap: break-word;
+    }
+    .error { color: red; }
+    .success { color: green; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Name Validation</h1>
+    <input type="text" id="nameInput" placeholder="Enter your name" />
+    <br />
+    <button onclick="validateName()">Validate</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function validateName() {
+      const input = document.getElementById("nameInput").value.trim();
+      const result = document.getElementById("result");
+
+      if (input === "") {
+        result.textContent = "Name cannot be empty.";
+        result.className = "error";
+        return;
+      }
+
+      // Regex: only letters (a-z, A-Z) and spaces allowed
+      const nameRegex = /^[A-Za-z\s]+$/;
+
+      if (nameRegex.test(input)) {
+        result.textContent = input + " is valid.";
+        result.className = "success";
+      } else {
+        result.textContent = input + " is invalid (Name can only contain letters and spaces).";
+        result.className = "error";
+      }
+    }
+  </script>
+</body>
+</html>
