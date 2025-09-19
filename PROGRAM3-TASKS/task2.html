@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Remove Duplicates</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right,white, gray);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+      text-align: center;
+      width: 360px;
+    }
+
+    h2 {
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 90%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #bbb;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: border 0.3s ease;
+    }
+
+    input:focus {
+      border-color: gray;
+      outline: none;
+    }
+
+    button {
+      width: 95%;
+      padding: 12px;
+      background: #45a045;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+      background: #45a045;
+      transform: scale(1.02);
+    }
+
+    .output {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: 600;
+      color: #34495e;
+      word-wrap: break-word;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Remove Duplicates from Array</h2>
+    <input type="text" id="arrayInput" placeholder="Enter numbers (e.g. 1,2,2,3,4,4,5)">
+    <button onclick="removeDuplicates()">Remove Duplicates</button>
+    <div class="output" id="result"></div>
+  </div>
+
+  <script>
+    function removeDuplicates() {
+      let input = document.getElementById("arrayInput").value;
+      let arr = input.split(",").map(Number);
+      let uniqueArr = [...new Set(arr)];
+      document.getElementById("result").innerText = "[" + uniqueArr.join(", ") + "]";
+    }
+  </script>
+</body>
+</html>
