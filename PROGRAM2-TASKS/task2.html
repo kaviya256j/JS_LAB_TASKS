@@ -1,0 +1,87 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Number Guess Game</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      display: flex;
+      min-height: 100vh;
+      align-items: center;
+      justify-content: center;
+      background: #f2f7ff;
+      margin: 0;
+    }
+    .card {
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 300px;
+    }
+    h1 { margin-bottom: 15px; font-size: 22px; }
+    input {
+      padding: 8px;
+      font-size: 16px;
+      width: 80px;
+      text-align: center;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button {
+      margin-top: 10px;
+      padding: 8px 14px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      background: #0077ff;
+      color: white;
+    }
+    button:active { transform: translateY(1px); }
+    #result {
+      margin-top: 15px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Guess the Number</h1>
+    <input type="number" id="userInput" placeholder="Enter" />
+    <br />
+    <button onclick="checkNumber()">Check</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    
+    const secretNumber = 42;
+
+    function checkNumber() {
+      const input = document.getElementById("userInput").value;
+      const result = document.getElementById("result");
+
+      if (input === "") {
+        result.textContent = "Please enter a number.";
+        return;
+      }
+
+      const num = Number(input);
+
+      if (num < secretNumber) {
+        result.textContent = "Too Low";
+      } else if (num > secretNumber) {
+        result.textContent = "Too High";
+      } else {
+        result.textContent = "Correct!";
+      }
+    }
+  </script>
+</body>
+</html>
