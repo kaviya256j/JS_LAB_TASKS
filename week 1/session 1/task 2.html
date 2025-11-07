@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Week 1 - Session 1 | Task 2: Data Types & Type Conversion</title>
+</head>
+<body>
+  <script>
+
+
+    console.log("=== Data Types in JavaScript ===");
+
+ 
+    let age = 25;
+    console.log("Number:", age, "| Type:", typeof age);
+
+
+    let name = "Alice";
+    console.log("String:", name, "| Type:", typeof name);
+
+    
+    let isStudent = true;
+    console.log("Boolean:", isStudent, "| Type:", typeof isStudent);
+
+    
+    let emptyValue = null;
+    console.log("Null:", emptyValue, "| Type:", typeof emptyValue);
+
+   
+    let notAssigned;
+    console.log("Undefined:", notAssigned, "| Type:", typeof notAssigned);
+
+   
+    let person = { firstName: "Bob", age: 30 };
+    console.log("Object:", person, "| Type:", typeof person);
+
+    
+    let uniqueId = Symbol("id");
+    console.log("Symbol:", uniqueId, "| Type:", typeof uniqueId);
+
+    console.log("\n=== Type Conversion Examples ===");
+
+   
+    let strNumber = "123";
+    let convertedNumber = Number(strNumber);
+    console.log("String to Number:", strNumber, "→", convertedNumber, "| Type:", typeof convertedNumber);
+
+    
+    let numValue = 456;
+    let convertedString = String(numValue);
+    console.log("Number to String:", numValue, "→", convertedString, "| Type:", typeof convertedString);
+
+   
+    let boolValue = false;
+    let boolToString = String(boolValue);
+    console.log("Boolean to String:", boolValue, "→", boolToString, "| Type:", typeof boolToString);
+
+    
+    let result1 = "5" + 10; 
+    let result2 = "5" - 2;  
+    let result3 = "10" * 2; 
+    console.log("Implicit Conversion ('5' + 10):", result1, "| Type:", typeof result1);
+    console.log("Implicit Conversion ('5' - 2):", result2, "| Type:", typeof result2);
+    console.log("Implicit Conversion ('10' * 2):", result3, "| Type:", typeof result3);
+
+    
+    console.log("Number(true):", Number(true));   
+    console.log("Number(false):", Number(false)); 
+    console.log("Number(null):", Number(null));   
+    console.log("Number(undefined):", Number(undefined)); 
+
+    console.log("\n=== Summary Complete ===");
+  </script>
+</body>
+</html>
